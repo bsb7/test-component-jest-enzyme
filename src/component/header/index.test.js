@@ -1,5 +1,6 @@
 import React from 'react';
 import Enzyme, { shallow, adapter } from 'enzyme';
+import { findByTestAttr } from './../../../Utils';
 import Adapter from 'enzyme-adapter-react-16';
 
 import Header from './index';
@@ -13,11 +14,6 @@ const setUp = (props={}) => {
     const component = shallow(<Header {...props} />);
     return component;
 }
-
-const findByTestAttr = (component, attr) =>{
-    const wrapper = component.find(`[data-test='${attr}']`);
-    return wrapper; 
-};
 
 describe('Header Componet', ()=>{
 
